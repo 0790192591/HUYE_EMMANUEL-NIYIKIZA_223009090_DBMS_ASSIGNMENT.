@@ -1,0 +1,210 @@
+
+mysql> USE ruhande;
+Database changed
+mysql> SELECT* FROM ngoma;
++------+----------+----------+----------+--------+----------+--------+--------+----------------------------+------------------+
+| id   | f_name   | l_name   | province | sector | district | cell   | gender | e_mail                     | telephone_number |
++------+----------+----------+----------+--------+----------+--------+--------+----------------------------+------------------+
+|   50 | emmanuel | niyikiza | south    | huye   | ngoma    | mukoni | male   | emmanuelniyikiza6@gmail.co |        790192591 |
++------+----------+----------+----------+--------+----------+--------+--------+----------------------------+------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO ngoma VALUES('001', 'Habarurema', 'Jean', 'West', 'Nyamasheke', 'Bushenge', 'Gitaba', 'M', 'habarurema jean21@gmail.com', '078636635');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+| id   | f_name     | l_name   | province | sector     | district | cell   | gender | e_mail                     | telephone_number |
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma    | mukoni | male   | emmanuelniyikiza6@gmail.co |        790192591 |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge | Gitaba | M      | habarurema jean21@gmail.co |         78636635 |
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+2 rows in set (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('002', 'Umwari', 'Alice', 'South', 'Nyamasheke', 'Bushenge', 'Karambi', 'F', 'umwarialine21@gmail.com', '0766772675');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('003', 'Mukunzi', 'Jonas', 'North', 'Huye', 'ngoma', 'Gitaba', 'M', 'mukunzijonas1@gmail.com', '07777735');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('004', 'Kamanzi', 'Poul', 'West', 'Nyamasheke', 'Bushekeri', 'gisakura', 'M', 'kamanzipoul@gmail.com', '0782222635');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('005', 'Ishami', 'Ornera', 'West', 'Nyamasheke', 'Bushenge', 'Gitaba', 'M', 'ishamiornera@gmail.com', '07996935');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('006', 'Muhawenayo', 'Gad', 'West', 'Rusizi', 'Bushenge', 'Gashonga', 'M', 'muhawenayogad1@gmail.com', '0722222222');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('007', 'Irakarama', 'Jisere', 'South', 'Huye', 'Ngoma', 'Tumba', 'F', 'irakaramajisere@gmail.com', '074444635');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  INSERT INTO ngoma VALUES('008', 'Mutare', 'Gabbi', 'West', 'Busogo', 'Bushenge', 'Gitaba', 'M', 'Mutaregabbi1@gmail.com', '078332222');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  INSERT INTO ngoma VALUES('009', 'Iratuzi', 'Rebecca', 'East', 'Nyagatare', 'Nyagatare', 'Gatare', 'F', 'iratuzirebecca@gmail.com', '078777735');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | male   | emmanuelniyikiza6@gmail.co |        790192591 |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE ngoma ADD COLUMN Salary CHAR(20);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number | Salary |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | male   | emmanuelniyikiza6@gmail.co |        790192591 | NULL   |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 | NULL   |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 | NULL   |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 | NULL   |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 | NULL   |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 | NULL   |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 | NULL   |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 | NULL   |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 | NULL   |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 | NULL   |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE ngoma SET Salary='5000' WHERE gender='F';
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number | Salary |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | male   | emmanuelniyikiza6@gmail.co |        790192591 | NULL   |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 | NULL   |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 | 5000   |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 | NULL   |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 | NULL   |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 | NULL   |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 | NULL   |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 | 5000   |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 | NULL   |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 | 5000   |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE ngoma SET gender='M' WHERE id='50';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number | Salary |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | M      | emmanuelniyikiza6@gmail.co |        790192591 | NULL   |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 | NULL   |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 | 5000   |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 | NULL   |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 | NULL   |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 | NULL   |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 | NULL   |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 | 5000   |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 | NULL   |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 | 5000   |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE ngoma SET Salary='10000' WHERE gender='M';
+Query OK, 7 rows affected (0.00 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number | Salary |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | M      | emmanuelniyikiza6@gmail.co |        790192591 | 10000  |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 | 10000  |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 | 5000   |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 | 10000  |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 | 10000  |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 | 10000  |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 | 10000  |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 | 5000   |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 | 10000  |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 | 5000   |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT id, f_name, Cell, gender,Salary FROM ngoma;
++------+------------+----------+--------+--------+
+| id   | f_name     | Cell     | gender | Salary |
++------+------------+----------+--------+--------+
+|   50 | emmanuel   | mukoni   | M      | 10000  |
+|    1 | Habarurema | Gitaba   | M      | 10000  |
+|    2 | Umwari     | Karambi  | F      | 5000   |
+|    3 | Mukunzi    | Gitaba   | M      | 10000  |
+|    4 | Kamanzi    | gisakura | M      | 10000  |
+|    5 | Ishami     | Gitaba   | M      | 10000  |
+|    6 | Muhawenayo | Gashonga | M      | 10000  |
+|    7 | Irakarama  | Tumba    | F      | 5000   |
+|    8 | Mutare     | Gitaba   | M      | 10000  |
+|    9 | Iratuzi    | Gatare   | F      | 5000   |
++------+------------+----------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE ngoma DROP COLUMN Salary;
+Query OK, 10 rows affected (0.06 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT* FROM ngoma;
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+| id   | f_name     | l_name   | province | sector     | district  | cell     | gender | e_mail                     | telephone_number |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma     | mukoni   | M      | emmanuelniyikiza6@gmail.co |        790192591 |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 |
+|    2 | Umwari     | Alice    | South    | Nyamasheke | Bushenge  | Karambi  | F      | umwarialine21@gmail.com    |        766772675 |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma     | Gitaba   | M      | mukunzijonas1@gmail.com    |          7777735 |
+|    4 | Kamanzi    | Poul     | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 |
+|    6 | Muhawenayo | Gad      | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma     | Tumba    | F      | irakaramajisere@gmail.com  |         74444635 |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 |
+|    9 | Iratuzi    | Rebecca  | East     | Nyagatare  | Nyagatare | Gatare   | F      | iratuzirebecca@gmail.com   |         78777735 |
++------+------------+----------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT* FROM ngoma WHERE province='West' AND gender='M';
++------+------------+--------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+| id   | f_name     | l_name | province | sector     | district  | cell     | gender | e_mail                     | telephone_number |
++------+------------+--------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+|    1 | Habarurema | Jean   | West     | Nyamasheke | Bushenge  | Gitaba   | M      | habarurema jean21@gmail.co |         78636635 |
+|    4 | Kamanzi    | Poul   | West     | Nyamasheke | Bushekeri | gisakura | M      | kamanzipoul@gmail.com      |        782222635 |
+|    5 | Ishami     | Ornera | West     | Nyamasheke | Bushenge  | Gitaba   | M      | ishamiornera@gmail.com     |          7996935 |
+|    6 | Muhawenayo | Gad    | West     | Rusizi     | Bushenge  | Gashonga | M      | muhawenayogad1@gmail.com   |        722222222 |
+|    8 | Mutare     | Gabbi  | West     | Busogo     | Bushenge  | Gitaba   | M      | Mutaregabbi1@gmail.com     |         78332222 |
++------+------------+--------+----------+------------+-----------+----------+--------+----------------------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT* FROM ngoma WHERE district='ngoma' OR cell='gitaba';
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+| id   | f_name     | l_name   | province | sector     | district | cell   | gender | e_mail                     | telephone_number |
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+|   50 | emmanuel   | niyikiza | south    | huye       | ngoma    | mukoni | M      | emmanuelniyikiza6@gmail.co |        790192591 |
+|    1 | Habarurema | Jean     | West     | Nyamasheke | Bushenge | Gitaba | M      | habarurema jean21@gmail.co |         78636635 |
+|    3 | Mukunzi    | Jonas    | North    | Huye       | ngoma    | Gitaba | M      | mukunzijonas1@gmail.com    |          7777735 |
+|    5 | Ishami     | Ornera   | West     | Nyamasheke | Bushenge | Gitaba | M      | ishamiornera@gmail.com     |          7996935 |
+|    7 | Irakarama  | Jisere   | South    | Huye       | Ngoma    | Tumba  | F      | irakaramajisere@gmail.com  |         74444635 |
+|    8 | Mutare     | Gabbi    | West     | Busogo     | Bushenge | Gitaba | M      | Mutaregabbi1@gmail.com     |         78332222 |
++------+------------+----------+----------+------------+----------+--------+--------+----------------------------+------------------+
+6 rows in set (0.00 sec)
